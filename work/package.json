@@ -1,0 +1,22 @@
+{
+  "name": "cat-energ",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "gulp style",
+    "start": "gulp serve"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.6.1",
+    "browser-sync": "^3.0.4",
+    "gulp": "^4.0.2",
+    "gulp-cli": "^3.1.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^10.0.0",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.105.2"
+  }
+}
