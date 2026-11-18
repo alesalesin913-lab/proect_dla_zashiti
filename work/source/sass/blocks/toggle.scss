@@ -72,6 +72,7 @@
   display: block;
   width: 84px;
   margin: 3px 18px;
+  cursor: pointer;
 
   @media (min-width: $tablets) {
     width: 428px;
@@ -152,6 +153,7 @@
 .toggle__items {
   width: 100%;
   margin-bottom: 30px;
+  position: relative;
 
   @media (min-width: $tablets) {
     margin-left: auto;
@@ -187,7 +189,7 @@
   &--after {
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s;
+    transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
   }
 
   @media (min-width: $tablets) {
@@ -196,18 +198,26 @@
 
     &--before {
       position: absolute;
+      opacity: 1;
+      visibility: visible;
       top: 0;
+      left:0;
       bottom: 0;
       z-index: 2;
       width: 50%;
       overflow: hidden;
       background-image: linear-gradient(to bottom, $white, $white 169px, $grey95 169px, $grey95);
-      transition: all 0.3s ease;
+      // transition: width 0.3s cubic-beizer(0.4, 0, 0.2, 1);
     }
 
-    // &--after {
-    //   display: block;
-    // }
+    &--after {
+      position: relative;
+      opacity: 1;
+      visibility: visible;
+      top: 0;
+      left: 0;
+      width: auto;
+    }
   }
 
   @media (min-width: $desktops) {
@@ -251,11 +261,6 @@
   .toggle__input--before:checked ~ .toggle__items .toggle__item--after {
     opacity: 1;
     visibility: visible;
-  }
-
-  .toggle__input--after:checked ~ .toggle__items .toggle__item--after,
-  .toggle__input--before:checked ~ .toggle__items .toggle__item--before {
-    display: block;
   }
 }
 

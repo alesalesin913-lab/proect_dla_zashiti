@@ -135,7 +135,7 @@
             </div>
             <div class="story__toggle toggle">
               <input class="toggle__input toggle__input--before" type="radio" id="story-input-before" name="story-input" checked>
-              <input class="toggle__input toggle__input--after" type="radio" id="story-input-after" name="story-input" checked>
+              <input class="toggle__input toggle__input--after" type="radio" id="story-input-after" name="story-input">
 
               <div class="toggle__items">
                 <div class="toggle__item toggle__item--before">
@@ -166,34 +166,28 @@
 
     <footer class="page-footer">
 
-      <section class="page-footer__contacts contacts contacts--index">
-        <div class="contacts__map-wrapper">
-          <div class="contacts__map" id="map" aria-label="Интерактивная карта"></div>
-          <div class="contacts__info">
-            <div class="contacts__container container">
-              
-            </div>
+<section class="page-footer__contacts contacts contacts--index">
+  <div class="contacts__map-wrapper">
+    <picture>
+      <source media="(min-width: 1300px)" >
+      <source media="(min-width: 768px)" >
+      <img class="contacts__map-img"  >
+    </picture>
+    <div class="contacts__map" id="map" aria-label="Интерактивная карта"></div>
+    <div class="contacts__info">
+      <div class="contacts__container container">
+        <div class="contacts__layout">
+          <div class="contacts__title-block">
+            <h2 class="contacts__title">Приглашаем к&nbsp;сотрудничеству дилеров!</h2>
+          </div>
+          <div class="contacts__info-block">
+            <address class="contacts__address">ул. Большая Конюшенная, д. 19/8 <span class="contacts__city">Санкт-Петербург</span></address>
           </div>
         </div>
-          
-            <!-- <img class="contacts__map-img" src="img/bg-map-mobile@1x.png" srcset="img/bg-map-mobile@2x.png 2x" alt="Схема проезда ул. Большая Конюшенная, д. 19/8 Санкт-Петербург"> -->
-             <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d69707.91425392356!2d60.6237722!3d56.9081472!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x43c172730dd54427%3A0xb414fd1b9d7ae8b6!2z0J_RgNC-0YHQv9C10LrRgiDQmtC-0YHQvNC-0L3QsNCy0YLQvtCy!5e0!3m2!1sru!2sru!4v1792762509488!5m2!1sru!2sru" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe> -->
-          
-          <div class="contacts__map" id="map" aria-label="map"></div>
-          <div class="contacts__info">
-            <div class="contacts__container container">
-              <div class="contacts__layout">
-                <div class="contacts__title-block">
-                  <h2 class="contacts__title">Приглашаем к&nbsp;сотрудничеству дилеров!</h2>
-                </div>
-                <div class="contacts__info-block">
-                  <address class="contacts__address">ул. Большая Конюшенная, д. 19/8 <span class="contacts__city">Санкт-Петербург</span></address>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      </div>
+    </div>
+  </div>
+</section>
 
       <div class="page-footer__info">
         <div class="page-footer__container container">
@@ -238,8 +232,8 @@
     </footer>
     
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDluwBfvy_M346vmyhvVLD62kK76nnVtss&callback=initMap" async defer></script>
-    <script>
-function initMap() {
+<script>
+  function initMap() {
   const location = { lat: 59.9343, lng: 30.3351 }; // координаты ул. Большая Конюшенная, 19/8, СПб
   const map = new google.maps.Map(document.getElementById("map"), {
     center: location,
@@ -255,7 +249,6 @@ function initMap() {
   });
 }
 </script>
-
 <script>
   const storytoggle=document.querySelector('.toggle');
   if(storytoggle) {
@@ -272,5 +265,8 @@ function initMap() {
     })
   }
 </script>
+
+<script src="js/script.js"></script>
+
   </body>
 </html>

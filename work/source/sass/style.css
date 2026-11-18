@@ -1117,7 +1117,7 @@ img {
   bottom: 0;
   left: 0;
   min-height: 362px;
-  z-index: 1;
+  z-index: 2;
   filter: hue-rotate(230deg);
 }
 @media (min-width: 768px) {
@@ -1136,7 +1136,7 @@ img {
   display: flex;
   flex-direction: row;
   padding: 27px 0;
-  z-index: 2;
+  z-index: 3;
 }
 @media (min-width: 768px) {
   .contacts__layout {
@@ -2278,6 +2278,7 @@ img {
   display: block;
   width: 84px;
   margin: 3px 18px;
+  cursor: pointer;
 }
 @media (min-width: 768px) {
   .toggle__range {
@@ -2357,6 +2358,7 @@ img {
 .toggle__items {
   width: 100%;
   margin-bottom: 30px;
+  position: relative;
 }
 @media (min-width: 768px) {
   .toggle__items {
@@ -2390,7 +2392,7 @@ img {
 .toggle__item--before, .toggle__item--after {
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s;
+  transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
 }
 @media (min-width: 768px) {
   .toggle__item {
@@ -2399,13 +2401,23 @@ img {
   }
   .toggle__item--before {
     position: absolute;
+    opacity: 1;
+    visibility: visible;
     top: 0;
+    left: 0;
     bottom: 0;
     z-index: 2;
     width: 50%;
     overflow: hidden;
     background-image: linear-gradient(to bottom, #ffffff, #ffffff 169px, #f2f2f2 169px, #f2f2f2);
-    transition: all 0.3s ease;
+  }
+  .toggle__item--after {
+    position: relative;
+    opacity: 1;
+    visibility: visible;
+    top: 0;
+    left: 0;
+    width: auto;
   }
 }
 @media (min-width: 1300px) {
@@ -2448,10 +2460,6 @@ img {
   .toggle__input--before:checked ~ .toggle__items .toggle__item--after {
     opacity: 1;
     visibility: visible;
-  }
-  .toggle__input--after:checked ~ .toggle__items .toggle__item--after,
-  .toggle__input--before:checked ~ .toggle__items .toggle__item--before {
-    display: block;
   }
 }
 @media (min-width: 768px) {

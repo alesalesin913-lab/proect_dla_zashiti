@@ -158,7 +158,7 @@
 
     <footer class="page-footer">
 
-      <section class="page-footer__contacts contacts contacts--index">
+      <section class="page-footer__contacts contacts">
         <div class="contacts__map-wrapper">
           <picture>
             <img class="contacts__map-img" src="img/bg-map-mobile@1x.png" srcset="img/bg-map-mobile@2x.png 2x" alt="Схема проезда ул. Большая Конюшенная, д. 19/8 Санкт-Петербург">
@@ -218,6 +218,25 @@
       </div>
 
     </footer>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDluwBfvy_M346vmyhvVLD62kK76nnVtss"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDluwBfvy_M346vmyhvVLD62kK76nnVtss&callback=initMap" async defer></script>
+    <script>
+      function initMap() {
+        const location = { lat: 59.9343, lng: 30.3351 }; // координаты ул. Большая Конюшенная, 19/8, СПб
+        const map = new google.maps.Map(document.getElementById("map"), {
+          center: location,
+          zoom: 16,
+          mapTypeId: "roadmap",
+        });
+
+        // Добавим маркер
+        new google.maps.Marker({
+          position: location,
+          map: map,
+          title: "Cat Energy — офис в Санкт-Петербурге",
+        });
+      }
+    </script>
+    <script src="js/script.js"></script>
+
   </body>
 </html>
